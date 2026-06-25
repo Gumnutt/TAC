@@ -1,0 +1,17 @@
+{% set attrs = {
+  'variant': variant|default('filled'),
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<tac-chip {{attributes}}>
+  {% if icon is not empty %}
+    {% include "tac:icon" ignore missing with {
+      icon,
+      icon_size: 'extra-small',
+    } %}
+  {% endif %}
+  {{ label }}
+</tac-chip>

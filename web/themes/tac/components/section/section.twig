@@ -1,0 +1,77 @@
+
+{% set has_background_image = background_media is not empty and background_media.src is not empty %}
+
+{% set attrs = {
+  'background-color': background_color ? background_color : null,
+  'margin-before': margin_block_start ? margin_block_start : null,
+  'margin-after': margin_block_end ? margin_block_end : null,
+  'padding-before': padding_block_start ? padding_block_start : null,
+  'padding-after': padding_block_end ? padding_block_end : null,
+} %}
+
+{% set grid_attrs = {
+  'columns': columns ? columns : null,
+  'mobile-columns': mobile_columns ? mobile_columns : null,
+  'gap': flex_gap ?: null,
+} %}
+
+{% set grid_attributes = create_attribute() %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+{% for key, value in grid_attrs %}
+  {% do grid_attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<section {{ attributes }}>
+  {# if there is background media #}
+  {% if background_media is not empty and background_media.src is not empty %}
+    {% block background_media_block %}
+      <tac-background-wrapper>
+        {% include 'canvas:image' ignore missing with {
+          src: background_media.src,
+          alt: background_media.alt,
+          class: [],
+          width: background_media.width,
+          height: background_media.height
+        } only %}
+      </tac-background-wrapper>
+    {% endblock %}
+  {% endif %}
+
+  <tac-container>
+    {% if section_header %}
+      {% set header_content %}
+        {% block header_slot %}
+
+        {% endblock %}
+      {% endset %}
+      {% if header_content|trim is not empty %}
+        <header>
+          {{ header_content }}
+        </header>
+      {% endif %}
+    {% endif %}
+
+    <tac-grid {{ grid_attributes }}>
+    {% block main_slot %}
+
+    {% endblock %}
+    </tac-grid>
+
+    {% if section_footer %}
+      {% set footer_content %}
+        {% block footer_slot %}
+
+        {% endblock %}
+      {% endset %}
+      {% if footer_content|trim is not empty %}
+        <footer>
+          {{ footer_content }}
+        </footer>
+      {% endif %}
+    {% endif %}
+  </tac-container>
+</section>

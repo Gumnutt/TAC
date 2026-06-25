@@ -1,0 +1,181 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Section
+group: Layout
+status: stable
+props:
+  type: object
+  required:
+    - columns
+    - mobile_columns
+  properties:
+    width:
+      type: string
+      title: Section width
+      enum:
+        - "100%"
+        - "90%"
+        - "80%"
+        - "75%"
+        - "50%"
+      default: "100%"
+      examples:
+        - "100%"
+    columns:
+      type: string
+      title: Columns
+      description: Layout selected applies on desktop and tablet.
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "75-25"
+        - "25-75"
+        - "67-33"
+        - "33-67"
+        - "50-25-25"
+        - "25-25-50"
+      meta:enum:
+        "1" : "1 column"
+        "2" : "2 columns"
+        "3" : "3 columns"
+        "4" : "4 columns"
+        "5" : "5 columns"
+        "6" : "6 columns"
+        75-25 : "2 columns 75%-25%"
+        25-75 : "2 columns 25%-75%"
+        67-33 : "2 columns 67%-33%"
+        33-67 : "2 columns 33%-67%"
+        50-25-25 : "3 columns 50%-25%-25%"
+        25-25-50 : "3 columns 25%-25%-50%"
+      examples:
+        - "2"
+      default:
+        - "2"
+    views_columns:
+      type: string
+      title: Views grid
+      description: If you are using a view in this section, select the grid layout.
+      enum:
+        - "2 columns"
+        - "3 columns"
+        - "4 columns"
+        - "5 columns"
+        - "6 columns"
+    mobile_columns:
+      type: string
+      title: Columns on mobile
+      enum:
+        - "1"
+        - "2"
+        - "3"
+      examples:
+        - "1"
+    flex_gap:
+      type: string
+      title: Space between items
+      enum:
+        - sm
+        - md
+        - lg
+        - xl
+      meta:enum:
+        sm: Small
+        md: Medium
+        lg: Large
+        xl: Extra-Large
+      examples:
+        - md
+    margin_block_start:
+      type: string
+      title: Margin top
+      enum:
+        - sm
+        - md
+        - lg
+        - xl
+      meta:enum:
+        sm: Small
+        md: Medium
+        lg: Large
+        xl: Extra-Large
+    margin_block_end:
+      type: string
+      title: Margin bottom
+      enum:
+        - sm
+        - md
+        - lg
+        - xl
+      meta:enum:
+        sm: Small
+        md: Medium
+        lg: Large
+        xl: Extra-Large
+    padding_block_start:
+      type: string
+      title: Padding top
+      enum:
+        - sm
+        - md
+        - lg
+        - xl
+      meta:enum:
+        sm: Small
+        md: Medium
+        lg: Large
+        xl: Extra-Large
+    padding_block_end:
+      type: string
+      title: Padding bottom
+      enum:
+        - sm
+        - md
+        - lg
+        - xl
+      meta:enum:
+        sm: Small
+        md: Medium
+        lg: Large
+        xl: Extra-Large
+    background_color:
+      type: string
+      title: Background color
+      enum:
+        - primary
+        - secondary
+        - accent
+        - muted
+      meta:enum:
+        primary: Primary
+        secondary: Secondary
+        accent: Accent
+        muted: Muted
+    background_media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Background image
+      type: object
+    section_header:
+      type: boolean
+      title: Show header region
+      examples:
+        - true
+      default:
+        - true
+    section_footer:
+      type: boolean
+      title: Show footer region
+      examples:
+        - true
+      default:
+        - true
+
+slots:
+  header_slot:
+    title: "Header"
+  main_slot:
+    title: "Grid"
+  footer_slot:
+    title: "Footer"

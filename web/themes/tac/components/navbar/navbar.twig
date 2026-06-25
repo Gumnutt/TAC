@@ -1,0 +1,56 @@
+<tac-container>
+  <tac-navbar>
+    <tac-logo>
+      {% block logo %}
+        {{ include('@tac/templates/block/block--system-branding-block.html.twig') }}
+      {% endblock %}
+    </tac-logo>
+
+    <tac-mobile-menu-toggle>
+      <button class="navbar--hamburger flex items-center justify-center" aria-label="{{ 'Show menu'|t }}" popovertarget="mobile-menu" popovertargetaction="show">
+        {{
+          include(
+            '@tac/components/icon/icon.twig',
+            {
+              icon: 'list',
+              icon_size: 'medium',
+
+            }
+          )
+        }}
+      </button>
+    </tac-mobile-menu-toggle>
+    
+    <tac-menu id="mobile-menu" popover>
+      <tac-mobile-menu-toggle>
+        <button
+          class="navbar--hide-menu flex h-11 w-11 flex-0 cursor-pointer items-center justify-center p-2 md:hidden"
+          aria-label="{{ 'Hide menu'|t }}"
+          popovertargetaction="hide"
+          popovertarget="mobile-menu"
+        >
+          {{
+            include(
+              '@tac/components/icon/icon.twig',
+              {
+                icon: 'x',
+                icon_size: 'medium'
+              }
+            )
+          }}
+        </button>
+      </tac-mobile-menu-toggle>
+      
+      {% block navigation %}
+
+      {% endblock %}
+      
+      {% block links %}
+        
+      {% endblock %}
+    </tac-menu>
+
+    
+  </tac-navbar>
+</tac-container>
+

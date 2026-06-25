@@ -1,0 +1,55 @@
+:where(h1,h2,h3,h4,h5,h6,p,a:not([data-component-id="navigation:toolbar-button"]),small,tac-text) {
+  --tac-text-align: revert;
+  --tac-text-color: var(--tac-color-foreground);
+  --tac-font-size: var(--tac-text-size);
+  
+  font-size: var(--tac-font-size);
+  font-family: var(--tac-font-sans);
+  text-align: var(--tac-text-align);
+  color: var(--tac-text-color);
+  margin-block-start: 0;
+  margin-block-end: 1em;
+  
+  &[align="left"] {
+    --tac-text-align: left;
+  }
+  &[align="center"] {
+    --tac-text-align: center;
+  }
+  &[align="right"] {
+    --tac-text-align: right;
+  }
+  &[text-color="default"]{
+    --tac-text-color: var(--tac-color-primary);
+  }
+  &[text-color="secondary"]{
+    --tac-text-color: var(--tac-color-secondary);
+  }
+  &[text-color="accent"]{
+    --tac-text-color: var(--tac-color-accent);
+  }
+}
+
+h1 {
+  --tac-font-size: var(--tac-text-size-700);
+}
+
+h2 {
+  --tac-font-size: var(--tac-text-size-600);
+}
+
+h3 {
+  --tac-font-size: var(--tac-text-size-500);
+}
+
+h4 {
+  --tac-font-size: var(--tac-text-size-400);
+}
+
+h5 {
+  --tac-font-size: var(--tac-text-size-300);
+}
+
+h6 {
+  --tac-font-size: var(--tac-text-size-200);
+}

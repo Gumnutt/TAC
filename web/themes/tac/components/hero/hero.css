@@ -1,0 +1,75 @@
+@import 'canvas.css' layer(overrides);
+
+@layer components {
+  tac-hero {
+    --tac-hero-media-position: center;
+    --tac-hero-content-position: 0 auto;
+    --tac-hero-text-align: left;
+    --tac-hero-content-gap: 1rem;
+    --tac-hero-adjusted-height: calc(var(--tac-hero-height) - var(--admin-toolbar-top-bar-height, 0px));
+    --tac-hero-height: 100vh;
+    --tac-hero-radius: 0px;
+    --tac-hero-inline-margin: 0px;
+    --tac-text-align: var(--tac-hero-text-align);
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: var(--tac-hero-radius);
+    width: calc(100% - var(--tac-hero-inline-margin) * 2);
+    min-height: var(--tac-hero-adjusted-height);
+    margin-inline: auto;
+    margin-block-start: var(--tac-hero-inline-margin);
+    
+    &[variant="floating"] {
+      --tac-hero-radius: 24px;
+      --tac-hero-inline-margin: 24px;
+    }
+    &[media-position="top"] {
+      --tac-hero-media-position: top;
+    }
+    &[media-position="bottom"] {
+      --tac-hero-media-position: bottom;
+    }
+    &[content-position="right"] {
+      --tac-hero-content-position: auto 0;
+      --tac-hero-text-align: right;
+    }
+    &[content-position="center"] {
+      --tac-hero-content-position: auto;
+      --tac-hero-text-align: center;
+    }
+    &[height="large"] {
+      --tac-hero-height: 75svh;
+    }
+    &[height="ribbon"] {
+      --tac-hero-height: auto;
+    }
+    &[overlap-navbar] {
+      margin-block-start: calc(var(--tac-navbar-height, 70px) * -1 + var(--tac-hero-inline-margin, 0px));
+    }
+    img{
+      --media-position: var(var(--tac-hero-media-position));
+    }
+    .hero-content{
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      text-align: var(--tac-hero-text-align);
+      margin-inline: var(--tac-hero-content-position);
+      gap: var(--tac-hero-content-gap);
+      :where(h1, h2, h3, h4, h5, h6) {
+        --tac-font-size: var(--tac-text-size-900);
+        line-height: 0.8;
+        margin-block: 0;
+      }
+      :where(p) {
+        --tac-font-size: var(--tac-text-size-300);
+      }
+    }
+    tac-text{
+      --tac-text-align: var(--tac-hero-text-align);
+    }
+  }
+}

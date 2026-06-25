@@ -1,0 +1,58 @@
+/* @TODO decide on wether we will use a custom tag for sections */
+/* or should we just stick with the generic <section> */
+/* gut feeling says to stick to the generic */
+@layer components {
+  [data-component-id="tac:section"] {
+    --tac-section-margin-start: var(--tac-margin-block-start);
+    --tac-section-margin-end: var(--tac-margin-block-end);
+    --tac-section-padding-start: var(--tac-padding-block-start);
+    --tac-section-padding-end: var(--tac-padding-block-end);
+    --tac-section-background-color: var(--tac-background, transparent);
+    --tac-grid-columns: 1;
+    --tac-grid-gap: calc(var(--tac-spacing) * 4);
+    
+    position: relative;
+    display: grid;
+    padding-block-start: var(--tac-section-padding-start);
+    padding-block-end: var(--tac-section-padding-end);
+    background-color: var(--tac-section-background-color);
+    margin-block-start: var(--tac-margin-block-start);
+    margin-block-end: var(--tac-section-margin-end);
+    grid-template-columns: repeat(var(--tac-grid-columns), 1fr);
+    container-name: section;
+    container-type: inline-size;
+    &[columns="2"]{
+      --tac-grid-columns: 2;
+    }
+    &[columns="3"]{
+      --tac-grid-columns: 3;
+    }
+    &[columns="4"]{
+      --tac-grid-columns: 4;
+    }
+    &[columns="5"]{
+      --tac-grid-columns: 5;
+    }
+    &[columns="6"]{
+      --tac-grid-columns: 6;
+    }
+    &[columns="75-25"]{
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    }
+    &[columns="25-75"]{
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    }
+    &[columns="67-33"]{
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+    &[columns="33-67"]{
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+    &[columns="50-25-25"]{
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    }
+    &[columns="25-25-50"]{
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr);
+    }
+  }
+}

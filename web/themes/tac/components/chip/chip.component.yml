@@ -1,0 +1,33 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Chip
+group: UI Element
+props:
+  type: object
+  required:
+    - label
+  properties:
+    variant:
+      type: string
+      title: Variant
+      enum:
+        - outlined
+        - filled
+      meta:enum:
+        filled: Solid
+        outlined: Outlined
+      default: filled
+      examples:
+        - filled
+    label:
+      type: string
+      title: Label
+      description: "A small UI element"
+      default: "Chip label"
+    icon:
+      type: string
+      title: Icon name
+      description: 'The ID of an icon from the <a href="https://phosphoricons.com/" target="_blank">Phosphor Icons</a> library.'
+      examples:
+        - "globe"
+    
+        

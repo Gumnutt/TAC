@@ -1,0 +1,38 @@
+{% set heading_level = level %}
+{% set heading_align = align|default('left') %}
+{% set heading_text_color = text_color|default('default') %}
+{% set has_url = url is not empty and url != 'No URL' ? 'yes' : 'no' %}
+
+{% set heading_content %}
+  {% if has_url == 'yes' %}
+    <a href="{{ url }}">{{ heading_text }}</a>
+  {% else %}
+    {{ heading_text }}
+  {% endif %}
+{% endset %}
+
+{% set attrs = {
+  'align': heading_align,
+  'text-color': heading_text_color,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+
+{% if heading_level == 1 %}
+  <h1 {{ attributes }}>{{ heading_content }}</h1>
+{% elseif heading_level == 2 %}
+  <h2 {{ attributes }}>{{ heading_content }}</h2>
+{% elseif heading_level == 3 %}
+  <h3 {{ attributes }}>{{ heading_content }}</h3>
+{% elseif heading_level == 4 %}
+  <h4 {{ attributes }}>{{ heading_content }}</h4>
+{% elseif heading_level == 5 %}
+  <h5 {{ attributes }}>{{ heading_content }}</h5>
+{% elseif heading_level == 6 %}
+  <h6 {{ attributes }}>{{ heading_content }}</h6>
+{% else %}
+  <span {{ attributes }}>{{ heading_content }}</span>
+{% endif %}

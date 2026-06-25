@@ -1,0 +1,52 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Heading
+group: Base
+status: stable
+props:
+  type: object
+  required:
+    - text_color
+    - align
+  properties:
+    heading_text:
+      type: string
+      title: Heading
+      default: "Enter title"
+      examples:
+        - Your heading goes here
+    level:
+      type: number
+      title: Heading level
+      enum: [1, 2, 3, 4, 5, 6]
+      examples:
+        - 2
+    text_color:
+      type: string
+      title: Text color
+      enum:
+        - default
+        - secondary
+        - accent
+      meta:enum:
+        default: Primary
+        secondary: Secondary
+        accent: Accent
+      examples:
+        - default
+    align:
+      type: string
+      title: Text alignment
+      enum:
+        - left
+        - center
+        - right
+      meta:enum:
+        left: Left
+        center: Center
+        right: Right
+      examples:
+        - left
+    url:
+      type: string
+      title: Link
+      format: uri-reference

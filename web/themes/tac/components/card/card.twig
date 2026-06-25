@@ -1,0 +1,55 @@
+{% set has_background_media = media is not empty and media.src is not empty %}
+{% set is_clickable = url is not empty ? true : false %}
+
+{% set attrs = {
+  'variant': variant|default,
+  'is-clickable': is_clickable,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<tac-card {{ attributes }}>
+  {% if has_background_media %}
+    {% block hero_media %}
+      <tac-background-wrapper>
+        {% include 'canvas:image' ignore missing with {
+          src: media.src,
+          alt: media.alt,
+          width: media.width,
+          height: media.height,
+          class: []
+        } only %}
+      </tac-background-wrapper>
+    {% endblock %}
+  {% endif %}
+
+  {% block card_content %}
+    <main>
+      {% if category or date %}
+        <header>
+          {% if category %}
+            {% include "tac:chip" ignore missing with {
+              label: category,
+              variant: 'outlined',
+              icon: 'sparkle',
+            } %}
+          {% endif %}
+          <small>{{ date }}</small>
+        </header>
+      {% endif %}
+      
+
+      {% include "tac:heading" ignore missing with {
+        heading_text,
+        level,
+        url: url ?: {},
+        align: 'left',
+        text_color: 'default'
+      } %}
+    </main>
+  {% endblock %}
+  
+
+</tac-card>

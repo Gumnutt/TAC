@@ -1,0 +1,23 @@
+@layer components {
+  tac-chip {
+    --tac-chip-background-color: var(--tac-color-white);
+    --tac-chip-border-radius: 4px;
+    --tac-chip-gap: 0.5rem;
+
+    display: inline-flex;
+    align-items: center;
+    border: var(--tac-chip-border-size) solid var(--tac-chip-border-color);
+    border-radius: var(--tac-chip-border-radius);
+    padding-block: 0.25em;
+    padding-inline: min(var(--tac-chip-gap), 0.75rem);
+    background-color: var(--tac-chip-background-color);
+    font-size: var(--tac-text-size-90);
+    gap: var(--tac-chip-gap);
+
+    &[variant="outlined"] {
+      --tac-chip-border-size: 1px;
+      --tac-chip-border-color: var(--tac-color-foreground);
+      --tac-chip-background-color: color-mix(var(--tac-color-background), transparent 80%);
+    }
+  }
+}

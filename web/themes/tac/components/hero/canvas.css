@@ -1,0 +1,6 @@
+tac-hero.in-canvas-editor{
+  --tac-hero-height: 1200px;
+  &[height="large"] {
+    --tac-hero-height: 900px;
+  }
+}

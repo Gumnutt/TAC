@@ -1,0 +1,46 @@
+{% set is_disabled = disabled|default(false) %}
+{% set has_icon = icon is not empty %}
+
+{% set disabled_attr = is_disabled ? 'aria-disabled="true"' : '' %}
+{% set button_disabled_attr = is_disabled ? 'disabled' : '' %}
+{% set href = disabled|default(false) ? null : href %}
+{% set has_icon = icon is defined and icon is not empty %}
+
+{% set attrs = {
+  'variant': variant,
+  'disabled': not href and disabled ? true : null,
+  'href': href ? href : null,
+  'icon': has_icon ? icon : null,
+  'icon-first': icon_first ? true : null,
+  'presentation': href ? 'button' : null,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+{% if href %}
+  <a {{attributes}}>
+    {{ label }}
+    {% if has_icon %}
+      {%
+        include "tac:icon" with {
+          weight: 'bold',
+          icon: icon,
+        } only
+      %}
+    {% endif %}
+  </a>
+{% else %}
+  <button {{ attributes }} {{ button_disabled_attr }}>
+    {{ label }}
+    {% if has_icon %}
+      {%
+        include "tac:icon" with {
+          weight: 'bold',
+          icon: icon,
+        } only
+      %}
+    {% endif %}
+  </button>
+{% endif %}

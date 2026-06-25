@@ -1,0 +1,15 @@
+{% set text_text_color = text_color|default('default') %}
+{% set text_text_size = text_size|default('normal') %}
+
+{% set attrs = {
+  'text-color': text_text_color,
+  'text-size': text_text_size,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<tac-text {{ attributes }}>
+  {{ text }}
+</tac-text>

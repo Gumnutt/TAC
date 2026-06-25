@@ -1,0 +1,14 @@
+{% set attrs = {
+  'columns': columns ? columns : null,
+  'mobile-columns': mobile_columns ? mobile_columns : null,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<tac-grid {{attributes}}>
+  {% block main_slot %}
+
+  {% endblock %}
+</tac-grid>

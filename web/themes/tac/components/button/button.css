@@ -1,0 +1,62 @@
+@layer components {
+  button, [presentation="button"]{
+    --tac-button-background-color: var(--tac-color-primary);
+    --tac-button-hover-background-color: var(--tac-color-secondary);
+    --tac-button-text-color: var(--tac-color-secondary);
+    --tac-button-hover-text-color: var(--tac-color-primary);
+    --tac-button-inline-padding: 1rem;
+    --tac-button-block-padding: 0.5rem;
+    --tac-button-border-radius: 1e3px;
+    --tac-button-gap: 0.875rem;
+    --tac-button-border-size: 1px;
+    --tac-button-border-color: transparent;
+    --tac-button-hover-border-color: var(--tac-color-primary);
+
+    display: inline-flex;
+    align-items: center;
+    transition: all 150ms ease-out;
+    border-width: var(--tac-button-border-size);
+    border-style: solid;
+    border-color: var(--tac-button-border-color);
+    border-radius: var(--tac-button-border-radius);
+    width: fit-content;
+    padding-block: var(--tac-button-block-padding);
+    padding-inline: var(--tac-button-inline-padding);
+    background-color: var(--tac-button-background-color);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--tac-button-text-color);
+    gap: var(--tac-button-gap);
+    vertical-align: middle;
+    @media (pointer: coarse)   {
+      &:after{
+        content: '';
+        position: absolute;
+        inset: -8px;
+      }
+    }
+    &:hover {
+      border-color: var(--tac-button-hover-border-color);
+      background-color: var(--tac-button-hover-background-color);
+      color: var(--tac-button-hover-text-color);
+    }
+    svg{
+      width: 1.25em;
+      height: auto;
+      aspect-ratio: 1;
+    }
+
+    &[icon-first]{
+      flex-direction: row-reverse;
+    }
+
+    &[variant="secondary"]{
+      --tac-button-background-color: var(--tac-color-secondary);
+      --tac-button-hover-background-color: var(--tac-color-primary);
+      --tac-button-text-color: var(--tac-color-primary);
+      --tac-button-hover-text-color: var(--tac-color-secondary);
+      --tac-button-border-color: var(--tac-color-primary);
+      --tac-button-hover-border-color: transparent;
+    }
+  }
+}

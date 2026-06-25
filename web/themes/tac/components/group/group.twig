@@ -1,0 +1,19 @@
+{% set attrs = {
+  'direction': flex_direction,
+  'gap': flex_gap,
+  'horizontal-alignment': flex_align,
+  'vertical-alignment': items_align,
+  'radius': radius,
+  'padding': padding,
+  'background-color': background,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<tac-group {{ attributes }}>
+  {% block group_slot %}
+
+  {% endblock %}
+</tac-group>

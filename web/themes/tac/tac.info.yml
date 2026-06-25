@@ -1,0 +1,14 @@
+name: TAC
+regions:
+  footer: Footer
+  header: Header
+  content: Content
+description: 'A completely blank theme.'
+libraries:
+  - tac/global
+libraries-override:
+  core/normalize: false
+type: theme
+core_version_requirement: ^11
+'base theme': false
+version: 0.0.1

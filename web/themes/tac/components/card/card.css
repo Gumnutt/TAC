@@ -1,0 +1,61 @@
+@layer components {
+  tac-card {
+    --tac-card-background-color: var(--tac-color-background);
+    --tac-card-padding: 0.5rem;
+    --tac-image-height: 280px;
+    --tac-card-border-radius: 1.5rem;
+
+    position: relative;
+    display: grid;
+    transition: translate 200ms ease-out;
+    border-radius: var(--tac-card-border-radius);
+    padding: var(--tac-card-padding);
+    background-color: var(--tac-card-background-color);
+    gap: 8px;
+
+    &[variant="image"]{
+      grid-template-areas: "pile";
+      & > * {
+        grid-area: pile;
+      }
+      tac-background-wrapper {
+        position: absolute;
+        height: unset;
+      }
+      main{
+        z-index: 1;
+        place-content: end;
+      }
+    }
+
+    &[is-clickable]{
+      &:hover{
+        translate: 0px -0.5rem;
+      }
+    }
+
+    tac-background-wrapper {
+      position: static;
+      z-index: revert;
+      display: block;
+      overflow: hidden;
+      border-radius: calc(var(--tac-card-border-radius) - var(--tac-card-padding));
+      height: 280px;
+    }
+    main{
+      padding-inline: calc(var(--tac-card-padding) * 2);
+    }
+    
+    :where(h1, h2, h3, h4, h5, h6){
+      a{
+        text-decoration: none;
+        font: inherit;
+        &:after{
+          content: '';
+          position: absolute;
+          inset: 0;
+        }
+      }
+    }
+  }
+}

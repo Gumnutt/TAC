@@ -1,0 +1,86 @@
+form {
+  --tac-form-border-radius: 0.25rem;
+  --tac-form-border-color: var(--tac-color-foreground);
+  --tac-form-padding-inline: calc(var(--tac-spacing) * 3);
+  --tac-form-padding-block: var(--tac-spacing);
+  --tac-form-background: var(--tac-color-background);
+  --tac-form-gap: calc(var(--tac-spacing) * 2);
+
+  display: grid;
+  gap: var(--tac-form-gap);
+}
+
+.form-item:not(:has([type="radio"], [type="checkbox"])) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tac-form-gap);
+}
+fieldset {
+  border: none;
+  padding: 0;
+  .fieldset-wrapper {
+    & > * {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 160px));
+      gap: var(--tac-form-gap);
+    }
+    .form-item {
+      display: flex;
+      align-items: center;
+      transition: background-color 200ms ease-in, border-color 200ms ease-in;
+      border: 1px solid var(--tac-form-border-color);
+      border-radius: var(--tac-form-border-radius);
+      padding: var(--tac-form-padding-block);
+      cursor: pointer;
+      gap: var(--tac-form-gap);
+      &:has(input:checked) {
+        --tac-form-border-color: var(--tac-color-accent);
+        background-color: oklch(from var(--tac-color-accent) calc(l + 1) c h);
+      }
+      input{
+        margin: 0;
+        accent-color: var(--tac-color-accent);
+      }
+      label {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
+
+[type="range"]{
+  accent-color: var(--tac-color-accent);
+}
+
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="file"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+textarea {
+  appearance: none;
+  border: 1px solid var(--tac-form-border-color);
+  border-radius: var(--tac-form-border-radius);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding-block: var(--tac-form-padding-block);
+  padding-inline: var(--tac-form-padding-inline);
+  background-color: var(--tac-form-background);
+  font-size: inherit;
+  font-family: inherit;
+  accent-color: var(--tac-color-accent);
+  &:focus-visible {
+    --tac-form-border-color: var(--tac-color-accent);
+    outline-color: var(--tac-form-border-color);
+  }
+}

@@ -1,0 +1,39 @@
+{% set has_background_media = media is not empty and media.src is not empty %}
+
+{% set attrs = {
+  'variant': variant,
+  'height': height,
+  'content-position': flex_position,
+  'content-background': content_background,
+  'media-position': object_position ? object_position : 'center',
+  'overlap-navbar': overlap_navbar ? overlap_navbar: null,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<tac-hero {{ attributes }}>
+  {% if has_background_media %}
+    {% block hero_media %}
+      <tac-background-wrapper>
+        {% include 'canvas:image' ignore missing with {
+          src: media.src,
+          alt: media.alt,
+          width: media.width,
+          height: media.height,
+          class: []
+        } only %}
+      </tac-background-wrapper>
+    {% endblock %}
+  {% endif %}
+  <tac-container>
+    <div class="hero-content">
+      {% block hero_content %}
+        {% block hero_slot %}
+
+        {% endblock %}
+      {% endblock %}
+    </div>
+  </tac-container>
+</tac-hero>
