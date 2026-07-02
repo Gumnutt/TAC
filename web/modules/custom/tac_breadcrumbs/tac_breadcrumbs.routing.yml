@@ -1,0 +1,7 @@
+tac_breadcrumbs.settings:
+  path: '/admin/config/user-interface/tac-breadcrumbs'
+  defaults:
+    _form: '\Drupal\tac_breadcrumbs\Form\TacBreadcrumbsSettingsForm'
+    _title: 'TAC Breadcrumbs'
+  requirements:
+    _permission: 'administer tac breadcrumbs'

@@ -1,0 +1,25 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Breadcrumb
+group: Base
+status: stable
+props:
+  type: object
+  properties:
+    breadcrumb:
+      type: array
+      title: Breadcrumb items
+      description: Array of items with 'text' and optional 'url' (null for the current page)
+    separator:
+      type: string
+      title: Separator
+      default: "/"
+    max_label:
+      type: integer
+      title: Max label length
+      description: Approximate character length at which the current page label truncates.
+      default: 24
+    collapse_from:
+      type: integer
+      title: Collapse from
+      description: Number of visible labels at which the overflow control engages.
+      default: 4

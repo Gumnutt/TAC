@@ -1,0 +1,5 @@
+tac_breadcrumbs.settings:
+  title: 'TAC Breadcrumbs'
+  description: 'Configure the menu and separator used by the TAC Breadcrumbs block.'
+  route_name: tac_breadcrumbs.settings
+  parent: system.admin_config_ui

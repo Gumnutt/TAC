@@ -1,0 +1,4 @@
+administer tac breadcrumbs:
+  title: 'Administer TAC Breadcrumbs'
+  description: 'Configure the menu and separator used by the TAC Breadcrumbs block.'
+  restrict access: true

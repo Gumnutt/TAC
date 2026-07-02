@@ -1,0 +1,21 @@
+<nav aria-label="Breadcrumb" aria-labelledby="breadcrumbs-heading" role="navigation">
+	<h2 id="breadcrumbs-heading" class="clipped">You are here</h2>
+	<tac-breadcrumb
+		data-max-label="{{ max_label|default(24) }}"
+		data-collapse-from="{{ collapse_from|default(4) }}"
+		style="--tac-breadcrumb-separator: '{{ separator|default('/')|e('html_attr') }}'; --tac-breadcrumb-max: {{ max_label|default(24) }}ch;">
+		<ol {{ attributes }}>
+			{% for item in breadcrumb %}
+				<li{{ item.is_current ? ' data-current' : '' }}>
+					{% if item.is_current %}
+						<span aria-current="page">{{ item.text }}</span>
+					{% elseif item.url %}
+						<a href="{{ item.url }}">{{ item.text }}</a>
+					{% else %}
+						<span>{{ item.text }}</span>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ol>
+	</tac-breadcrumb>
+</nav>

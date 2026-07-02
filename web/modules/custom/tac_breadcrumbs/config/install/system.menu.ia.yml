@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - tac_breadcrumbs
+id: ia
+label: IA
+description: 'Information architecture menu used to build the TAC breadcrumb trail.'
