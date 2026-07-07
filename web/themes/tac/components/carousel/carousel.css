@@ -1,11 +1,45 @@
 tac-carousel {
-  --carousel-pagination-offset-vertical: 20px;
-  --carousel-gap: var(--gap);
-  --carousel-border-radius: 0;
-  --carousel-background-color: var(--theme-surface);
-  --carousel-pager-color: var(--theme-border-color);
-  --carousel-pager-color-active: var(--theme-text-color-primary);
-  --carousel-pager-size: 8px;
+  --tac-carousel-theme-color: var(--tac-color-accent);
+  --tac-carousel-pagination-color: var(--tac-color-accent);
+  --tac-carousel-pagination-offset-top: auto;
+  --tac-carousel-pagination-offset-left: auto;
+  --tac-carousel-pagination-offset-bottom: calc(var(--tac-spacing) * 3);
+  --tac-carousel-pagination-offset-right: auto;
+  --tac-carousel-pagination-bullet-horizontal-gap: var(--tac-spacing);
+  --tac-carousel-pagination-bullet-vertical-gap: var(--tac-spacing);
+  --tac-carousel-pagination-bullet-size: calc(var(--tac-spacing) * 2);
+  --tac-carousel-pagination-bullet-width: calc(var(--tac-spacing) * 2);
+  --tac-carousel-pagination-bullet-height: calc(var(--tac-spacing) * 2);
+  --tac-carousel-pagination-bullet-border-radius: 50%;
+  --tac-carousel-pagination-bullet-opacity: 1;
+  --tac-carousel-pagination-bullet-inactive-color: #cccccc;
+  --tac-carousel-pagination-bullet-inactive-opacity: 0.5;
+  --tac-carousel-pagination-bullet-inactive-size: calc(var(--tac-spacing) * 2);
+  --tac-carousel-pagination-bullet-inactive-width: calc(var(--tac-spacing) * 2);
+  --tac-carousel-pagination-bullet-inactive-height: calc(var(--tac-spacing) * 2);
+  --tac-carousel-pagination-bullet-inactive-radius: 50%;
+
+  --swiper-theme-color: var(--tac-carousel-theme-color);
+  --swiper-pagination-top: var(--tac-carousel-pagination-offset-top);
+  --swiper-pagination-left: var(--tac-carousel-pagination-offset-left);
+  --swiper-pagination-bottom: var(--tac-carousel-pagination-offset-bottom);
+  --swiper-pagination-right: var(--tac-carousel-pagination-offset-right);
+  --swiper-pagination-bullet-horizontal-gap: var(--tac-carousel-pagination-bullet-horizontal-gap);
+  --swiper-pagination-bullet-vertical-gap: var(--tac-carousel-pagination-bullet-vertical-gap);
+
+  --swiper-pagination-color: var(--tac-carousel-pagination-color);
+  --swiper-pagination-bullet-size: var(--tac-carousel-pagination-bullet-size);
+  --swiper-pagination-bullet-width: var(--tac-carousel-pagination-bullet-width);
+  --swiper-pagination-bullet-height: var(--tac-carousel-pagination-bullet-height);
+  --swiper-pagination-bullet-border-radius: var(--tac-carousel-pagination-bullet-border-radius);
+  --swiper-pagination-bullet-opacity: var(--tac-carousel-pagination-bullet-opacity);
+
+  --swiper-pagination-bullet-inactive-color: var(--tac-carousel-pagination-bullet-inactive-color);
+  --swiper-pagination-bullet-inactive-opacity: var(--tac-carousel-pagination-bullet-inactive-opacity);
+  --swiper-pagination-bullet-inactive-size: var(--tac-carousel-pagination-bullet-inactive-size); 
+  --swiper-pagination-bullet-inactive-width: var(--tac-carousel-pagination-bullet-inactive-width); 
+  --swiper-pagination-bullet-inactive-height: var(--tac-carousel-pagination-bullet-inactive-height); 
+  --swiper-pagination-bullet-inactive-radius: var(--tac-carousel-pagination-bullet-inactive-radius); 
 
   swiper-container {
     display: grid;
