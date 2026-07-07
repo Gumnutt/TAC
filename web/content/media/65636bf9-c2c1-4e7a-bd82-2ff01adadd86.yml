@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 65636bf9-c2c1-4e7a-bd82-2ff01adadd86
+  bundle: video
+  default_langcode: en
+  depends:
+    0c7af82a-6977-44d8-b76d-b0b1e1a0f2a2: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'A vibrant hot air balloon festival in Wonosobo, Central Java with scenic mountain views.'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_video_file:
+    -
+      display: false
+      description: ''
+      entity: 0c7af82a-6977-44d8-b76d-b0b1e1a0f2a2

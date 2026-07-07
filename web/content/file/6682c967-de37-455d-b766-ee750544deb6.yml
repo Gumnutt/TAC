@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6682c967-de37-455d-b766-ee750544deb6
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Video-Frame-001.png
+  uri:
+    -
+      value: 'public://2026-06/Video-Frame-001.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 2921652
+  status:
+    -
+      value: true

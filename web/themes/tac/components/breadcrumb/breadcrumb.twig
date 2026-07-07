@@ -1,0 +1,9 @@
+{% set menu_id = menu_id and menu_id != "" ? menu_id : (instance_id ? "menu-" ~ instance_id : "menu-" ~ random()) %}
+
+<ul {{ attributes }} data-menu-id="{{ menu_id }}">
+	{% for item in menu_trail %}
+		<li>
+			<a href="{{ item.url }}">{{ item.text }}</a>
+		</li>
+	{% endfor %}
+</ul>

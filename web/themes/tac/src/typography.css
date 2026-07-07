@@ -1,4 +1,4 @@
-:where(h1,h2,h3,h4,h5,h6,p,a:not([data-component-id="navigation:toolbar-button"]),small,tac-text) {
+:where(h1,h2,h3,h4,h5,h6,p,a:not([data-component-id="navigation:toolbar-button"], :where(p, span, li) a),small,tac-text) {
   --tac-text-align: revert;
   --tac-text-color: var(--tac-color-foreground);
   --tac-font-size: var(--tac-text-size);

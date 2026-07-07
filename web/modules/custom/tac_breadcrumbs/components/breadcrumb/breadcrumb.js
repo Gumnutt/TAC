@@ -102,7 +102,16 @@
 
       const button = document.createElement('button');
       button.type = 'button';
-      button.textContent = '…';
+      // U+22EF midline horizontal ellipsis: vertically centred by design,
+      // unlike U+2026 which sits on the baseline.
+      button.textContent = '⋯';
+      // wrap the text content in a span so the button can be sized to the text content and not the popover menu.
+      const span = document.createElement('span');
+      span.textContent = button.textContent;
+      button.textContent = '';
+      button.appendChild(span);
+      button.setAttribute('aria-haspopup', 'true');
+      button.setAttribute('aria-expanded', 'false');
       button.setAttribute('popovertarget', id);
       button.setAttribute(
         'aria-label',

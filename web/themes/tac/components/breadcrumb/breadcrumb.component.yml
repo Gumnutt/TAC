@@ -1,0 +1,26 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Breadcrumb
+group: Base
+status: stable
+props:
+  type: object
+  properties:
+    menu_id:
+      type: string
+      title: Menu ID
+      description: Unique identifier for the menu (auto-generated if not provided)
+      default: ""
+    instance_id:
+      type: string
+      title: Instance ID
+    menu_name:
+      type: string
+      title: Menu Name
+      description: The name of the menu
+    menu_trail:
+      type: array
+      title: menu trail
+slots:
+  items:
+    title: Menu Items
+    description: List of menu items with title, url, and optionally below or content

@@ -1,0 +1,22 @@
+{% set attrs = {
+  'radius': border_radius|default(),
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+
+<tac-image {{ attributes }}>
+	{% if image_link %}
+		<a class="canvas-image__link" href="{{ image_link }}">
+		{% endif %}
+		{{ include('tac:image-or-media', {
+    image,
+    width,
+    loading,
+    alt,
+  }, with_context = false) }}
+		{% if image_link %}
+		</a>
+	{% endif %}
+</tac-image>

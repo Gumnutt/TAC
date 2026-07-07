@@ -91,3 +91,8 @@ tac-grid{
     color: inherit;
   }
 }
+
+:where(tac-image) {
+  overflow: hidden;
+  border-radius: var(--tac-radius);
+}

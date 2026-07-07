@@ -1,0 +1,9 @@
+tac-carousel {
+  --carousel-pagination-offset-vertical: 20px;
+  --carousel-gap: var(--gap);
+  --carousel-border-radius: 0;
+  --carousel-background-color: var(--theme-surface);
+  --carousel-pager-color: var(--theme-border-color);
+  --carousel-pager-color-active: var(--theme-text-color-primary);
+  --carousel-pager-size: 8px;
+}

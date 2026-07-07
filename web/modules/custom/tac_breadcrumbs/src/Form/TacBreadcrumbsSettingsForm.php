@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\tac_breadcrumbs\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -17,10 +19,11 @@ final class TacBreadcrumbsSettingsForm extends ConfigFormBase {
   private const SETTINGS = 'tac_breadcrumbs.settings';
 
   public function __construct(
-    $config_factory,
+    ConfigFactoryInterface $config_factory,
+    TypedConfigManagerInterface $typedConfigManager,
     private readonly EntityTypeManagerInterface $entityTypeManager,
   ) {
-    parent::__construct($config_factory);
+    parent::__construct($config_factory, $typedConfigManager);
   }
 
   /**
@@ -29,6 +32,7 @@ final class TacBreadcrumbsSettingsForm extends ConfigFormBase {
   public static function create(ContainerInterface $container): static {
     return new static(
       $container->get('config.factory'),
+      $container->get('config.typed'),
       $container->get('entity_type.manager'),
     );
   }

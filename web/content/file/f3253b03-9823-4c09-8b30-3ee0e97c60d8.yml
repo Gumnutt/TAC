@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f3253b03-9823-4c09-8b30-3ee0e97c60d8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: pexels-stywo-1054218.jpg
+  uri:
+    -
+      value: 'public://2026-05/pexels-stywo-1054218.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 829813
+  status:
+    -
+      value: true

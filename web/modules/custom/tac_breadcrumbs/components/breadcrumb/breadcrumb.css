@@ -1,5 +1,20 @@
 tac-breadcrumb {
 	--tac-breadcrumb-gap: 0.5rem;
+	--tac-breadcrumb-color: inherit;
+	--tac-breacdcrumb-active-color: var(--tac-color-accent, inherit);
+	--tac-breacdcrumb-link-hover-color: var(--tac-color-accent, inherit);
+
+	--tac-breadcrumb-overflow-button-color: var(--tac-color-background, oklch(0.9195 0.0169 88.0030));
+	--tac-breadcrumb-overflow-button-radius: 1e3px;
+	--tac-breadcrumb-overflow-button-padding-block: 0;
+	--tac-breadcrumb-overflow-button-padding-inline: 0.2rem;
+
+	--tac-breadcrumb-overflow-menu-border-width: 0px;
+	--tac-breadcrumb-overflow-menu-border-color: transparent;
+	--tac-breadcrumb-overflow-menu-border-radius: 0.5rem;
+	--tac-breadcrumb-overflow-menu-background-color: var(--tac-color-white, white);
+	--tac-breadcrumb-overflow-menu-gap: 1rem;
+	--tac-breadcrumb-overflow-menu-color: inherit;
 
 	display: block;
 
@@ -13,6 +28,17 @@ tac-breadcrumb {
 			flex-shrink: 0;
 			min-width: 0;
 		}
+	}
+
+	h2 {
+    position: absolute;
+    overflow: hidden;
+    clip-path: inset(50%);
+		border: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    white-space: nowrap;
 	}
 
 	> ol {
@@ -49,14 +75,19 @@ tac-breadcrumb {
 	}
 
 	button {
+		display: grid;
+		align-items: center;
 		margin: 0;
 		border: 0;
-		padding: 0 var(--tac-breadcrumb-gap);
-		background: none;
+		border-radius: var(--tac-breadcrumb-overflow-button-radius);
+		padding-block: var(--tac-breadcrumb-overflow-button-padding-block);
+		padding-inline: var(--tac-breadcrumb-overflow-button-padding-inline);
+		background: var(--tac-breadcrumb-overflow-button-color);
 		cursor: pointer;
-		line-height: 1;
-		color: inherit;
-		font: inherit;
+		aspect-ratio: 1;
+		span{
+			align-self: center;
+		}
 	}
 
 	li[data-overflow] {
@@ -65,13 +96,16 @@ tac-breadcrumb {
 	tac-overflow-menu {
 		margin: 0;
 		box-shadow: var(--tac-shadow-md, 0 4px 12px rgb(0 0 0 / 0.15));
-		border: 1px solid var(--tac-colour-border, #d0d0d0);
-		border-radius: var(--tac-radius-sm, 4px);
+		border-width: var(--tac-breadcrumb-overflow-menu-border-width);
+		border-style: solid;
+		border-color: var(--tac-breadcrumb-overflow-menu-border-color);
+		border-radius: var(--tac-breadcrumb-overflow-menu-border-radius);
 		min-width: max-content;
-		padding: var(--tac-space-xs, 0.5rem);
-		background: var(--tac-colour-surface, #fff);
+		padding: 0.75rem;
+		background: var(--tac-breadcrumb-overflow-menu-background-color);
 		inset: auto;
 		list-style: none;
+		gap: var(--tac-breadcrumb-overflow-menu-gap);
 		@supports (anchor-name: --a) {
 			position: fixed;
 			top: anchor(bottom);
@@ -84,6 +118,7 @@ tac-breadcrumb {
 			gap: var(--tac-breadcrumb-gap);
 		}
 		li {
+			color: var(--tac-breadcrumb-overflow-menu-color);
 			white-space: nowrap;
 		}
 	}

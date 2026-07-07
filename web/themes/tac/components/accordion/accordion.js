@@ -87,8 +87,6 @@ class Accordion extends ComponentInstance {
   // Measure how tall the content should be when open so we can smoothly animate
   // to it using CSS.
   measureNaturalHeight() {
-    console.log(this)
-    
     // What we do here should not be seen by ancestor accordions.
     this.shouldDispatchEvents = false;
     // Remember what state the accordion started in.
@@ -96,14 +94,12 @@ class Accordion extends ComponentInstance {
     // Turn off animations.
     // Open the accordion if it's not already open.
     this.isOpen = true;
-    console.log(this.isOpen)
     // Measure the natural height and make it available to CSS as a custom
     // property.
     const height = this.contentContainer.getBoundingClientRect().height;
     this.el.style.setProperty("--natural-height", `${height}px`);
     // Restore the accordion to the state it started in.
     this.isOpen = previousState;
-    console.log(this.isOpen)
     // Become visible to ancestor accordions again.
     this.shouldDispatchEvents = true;
   }

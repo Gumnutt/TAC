@@ -1,0 +1,50 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Accordion
+description: A single section of content than can be collapsed and expanded.
+group: Layout
+props:
+  type: object
+  properties:
+    space_between:
+      type: string
+      title: Space between items
+      default: small
+      enum:
+        - none
+        - small
+        - medium
+        - large
+      meta:enum:
+        none: None
+        small: Small
+        medium: Medium
+        large: Large
+    pagination:
+      type: boolean
+      title: Use pagination
+    autoplay:
+      type: boolean
+      title: Autoplay
+    items_per_view:
+      type: integer
+      title: Items in view
+      default: 3
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+      meta:enum:
+        1: One
+        2: Two
+        3: Three
+        4: Four
+
+slots:
+  items:
+    title: Carousel content
+    description: Content in this slot will become an item in the carousel.
+
+libraryOverrides:
+  js:
+    carousel.js: { attributes: { type: module } }

@@ -1,0 +1,528 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: ff94a20d-4eee-42f8-9ec7-48ccf940d5ac
+  default_langcode: en
+  depends:
+    f3253b03-9823-4c09-8b30-3ee0e97c60d8: file
+    a722839b-8ceb-4fb8-a2a8-c5d8e9a83999: media
+    0c7af82a-6977-44d8-b76d-b0b1e1a0f2a2: file
+    6682c967-de37-455d-b766-ee750544deb6: file
+    f540e217-e7ca-49a0-b662-52484654caeb: media
+    65636bf9-c2c1-4e7a-bd82-2ff01adadd86: media
+default:
+  revision_user:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: Home
+  components:
+    -
+      uuid: a830ffff-9e02-4b32-8252-f5ae4f1b8ed4
+      component_id: sdc.tac.hero
+      inputs:
+        height: full
+        flex_position: center
+        content_background: false
+        object_position: center
+        media:
+          CANVAS_ENTITY_REFERENCE:
+            target_uuid: a722839b-8ceb-4fb8-a2a8-c5d8e9a83999
+            target_type: media
+        overlap_navbar: true
+        variant: floating
+    -
+      parent_uuid: a830ffff-9e02-4b32-8252-f5ae4f1b8ed4
+      slot: hero_slot
+      uuid: 2a831860-ca81-45fe-894a-ced5bd41016b
+      component_id: sdc.tac.heading
+      inputs:
+        heading_text: 'Your heading goes here'
+        level: 1
+        text_color: secondary
+        align: center
+    -
+      parent_uuid: a830ffff-9e02-4b32-8252-f5ae4f1b8ed4
+      slot: hero_slot
+      uuid: 4bc66386-9168-44cf-bcef-6e7a4d8ab83b
+      component_id: sdc.tac.text
+      inputs:
+        text:
+          value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
+          format: canvas_html_block
+        text_size: normal
+        text_color: secondary
+    -
+      parent_uuid: a830ffff-9e02-4b32-8252-f5ae4f1b8ed4
+      slot: hero_slot
+      uuid: 43a721a1-0e4d-430f-aced-1c7fafd527a6
+      component_id: sdc.tac.group
+      inputs:
+        flex_direction: row
+        flex_gap: md
+        items_align: center
+        radius: sm
+        padding: sm
+        flex_align: center
+    -
+      parent_uuid: 43a721a1-0e4d-430f-aced-1c7fafd527a6
+      slot: group_slot
+      uuid: dc3f4c85-e77a-4200-822d-74a5b3ba1dcd
+      component_id: sdc.tac.button
+      inputs:
+        variant: primary
+        label: 'Button label'
+        href:
+          uri: 'https://brynnthe.dev'
+          options: {  }
+        icon: download
+        icon_first: false
+        disabled: false
+    -
+      parent_uuid: 43a721a1-0e4d-430f-aced-1c7fafd527a6
+      slot: group_slot
+      uuid: 36e6eb9a-0eea-4fc0-be5b-ebcd17cb564d
+      component_id: sdc.tac.button
+      inputs:
+        variant: secondary
+        label: 'Button label'
+        href:
+          uri: 'https://brynnthe.dev'
+          options: {  }
+        icon: arrow-right
+        icon_first: true
+        disabled: false
+    -
+      uuid: 76109e7e-3f0e-4f2d-bb8a-ea7c96d3728c
+      component_id: sdc.tac.section
+      inputs:
+        width: 100%
+        columns: '2'
+        mobile_columns: '1'
+        padding_block_start: lg
+        section_header: true
+        section_footer: true
+        padding_block_end: lg
+        background_color: muted
+        flex_gap: xl
+        margin_block_start: lg
+        margin_block_end: lg
+    -
+      parent_uuid: 76109e7e-3f0e-4f2d-bb8a-ea7c96d3728c
+      slot: main_slot
+      uuid: 23f7faf6-88b6-47a1-868a-eef048f6f336
+      component_id: sdc.tac.group
+      inputs:
+        flex_direction: column
+        flex_gap: md
+        items_align: start
+        radius: xl
+        padding: lg
+        flex_align: center
+        background: primary
+    -
+      parent_uuid: 23f7faf6-88b6-47a1-868a-eef048f6f336
+      slot: group_slot
+      uuid: 6d9c8a85-8729-49a4-b8c1-de689d8a2602
+      component_id: sdc.tac.chip
+      inputs:
+        variant: filled
+        label: Labels
+        icon: sparkle
+    -
+      parent_uuid: 23f7faf6-88b6-47a1-868a-eef048f6f336
+      slot: group_slot
+      uuid: 0237eb0b-9290-4573-9ef7-61733dae67f3
+      component_id: sdc.tac.heading
+      inputs:
+        heading_text: 'Your heading goes here'
+        level: 2
+        text_color: secondary
+        align: left
+    -
+      parent_uuid: 23f7faf6-88b6-47a1-868a-eef048f6f336
+      slot: group_slot
+      uuid: 4f52d360-13ac-4d90-b03a-d5fe6f857fc0
+      component_id: sdc.tac.text
+      inputs:
+        text:
+          value: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p><p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>'
+          format: canvas_html_block
+        text_size: normal
+        text_color: secondary
+    -
+      parent_uuid: 76109e7e-3f0e-4f2d-bb8a-ea7c96d3728c
+      slot: main_slot
+      uuid: 356f2044-6f06-4eba-82c1-5c090e8fae97
+      component_id: sdc.tac.video
+      inputs:
+        media:
+          CANVAS_ENTITY_REFERENCE:
+            target_uuid: 65636bf9-c2c1-4e7a-bd82-2ff01adadd86
+            target_type: media
+        autoplay: false
+        controls: true
+        muted: true
+        loop: true
+        caption: 'A vibrant hot air balloon festival in Wonosobo, Central Java with scenic mountain views.'
+        poster:
+          CANVAS_ENTITY_REFERENCE:
+            target_uuid: f540e217-e7ca-49a0-b662-52484654caeb
+            target_type: media
+    -
+      uuid: 5b1ebc16-4322-47f6-b4d5-c632766bff2b
+      component_id: sdc.tac.section
+      inputs:
+        width: 100%
+        columns: '3'
+        mobile_columns: '1'
+        flex_gap: md
+        section_header: true
+        section_footer: true
+        margin_block_end: lg
+        margin_block_start: lg
+    -
+      parent_uuid: 5b1ebc16-4322-47f6-b4d5-c632766bff2b
+      slot: main_slot
+      uuid: dfb09885-981a-4c1d-913f-54f60cb629f2
+      component_id: sdc.tac.card
+      inputs:
+        heading_text: 'This is your card title'
+        level: 4
+        media:
+          sourceType: default-relative-url
+          value:
+            src: assets/gradient.jpg
+            width: 800
+            height: 600
+            alt: 'Blue to green gradient placeholder image'
+          jsonSchema:
+            type: object
+            properties:
+              src:
+                type: string
+                contentMediaType: 'image/*'
+                format: uri-reference
+                x-allowed-schemes:
+                  - http
+                  - https
+              alt:
+                type: string
+              width:
+                type: integer
+              height:
+                type: integer
+            required:
+              - src
+          componentId: sdc.tac.card
+        category: Category
+        icon: globe
+        url:
+          uri: 'entity:node/1'
+          options: {  }
+        variant: image
+    -
+      parent_uuid: 5b1ebc16-4322-47f6-b4d5-c632766bff2b
+      slot: main_slot
+      uuid: 8a6c504a-9f41-49ed-bea1-38294ac29fd0
+      component_id: sdc.tac.card
+      inputs:
+        heading_text: 'This is your card title'
+        level: 4
+        media:
+          sourceType: default-relative-url
+          value:
+            src: assets/gradient.jpg
+            width: 800
+            height: 600
+            alt: 'Blue to green gradient placeholder image'
+          jsonSchema:
+            type: object
+            properties:
+              src:
+                type: string
+                contentMediaType: 'image/*'
+                format: uri-reference
+                x-allowed-schemes:
+                  - http
+                  - https
+              alt:
+                type: string
+              width:
+                type: integer
+              height:
+                type: integer
+            required:
+              - src
+          componentId: sdc.tac.card
+        category: Category
+        icon: globe
+        variant: image
+    -
+      parent_uuid: 5b1ebc16-4322-47f6-b4d5-c632766bff2b
+      slot: main_slot
+      uuid: d6fa5ec6-dfe9-4b6d-9ee4-911c4cbfcad4
+      component_id: sdc.tac.card
+      inputs:
+        heading_text: 'This is your card title'
+        level: 4
+        media:
+          sourceType: default-relative-url
+          value:
+            src: assets/gradient.jpg
+            width: 800
+            height: 600
+            alt: 'Blue to green gradient placeholder image'
+          jsonSchema:
+            type: object
+            properties:
+              src:
+                type: string
+                contentMediaType: 'image/*'
+                format: uri-reference
+                x-allowed-schemes:
+                  - http
+                  - https
+              alt:
+                type: string
+              width:
+                type: integer
+              height:
+                type: integer
+            required:
+              - src
+          componentId: sdc.tac.card
+        category: Category
+        icon: globe
+        variant: standard
+    -
+      uuid: 2877a49e-7587-468b-8320-2b09cdb964e3
+      component_id: sdc.tac.section
+      inputs:
+        width: 100%
+        columns: '1'
+        mobile_columns: '1'
+        flex_gap: md
+        section_header: true
+        section_footer: true
+    -
+      parent_uuid: 2877a49e-7587-468b-8320-2b09cdb964e3
+      slot: main_slot
+      uuid: 18dd216e-73ff-41e3-afc3-3bc9fce09d28
+      component_id: sdc.tac.accordion-container
+      inputs: {  }
+    -
+      parent_uuid: 18dd216e-73ff-41e3-afc3-3bc9fce09d28
+      slot: accordion_content
+      uuid: b8669940-b4da-44b1-b624-832c163aefc8
+      component_id: sdc.tac.accordion
+      inputs:
+        title: 'Accordion title'
+        heading_level: 3
+        icon: globe
+        open_by_default: true
+    -
+      parent_uuid: b8669940-b4da-44b1-b624-832c163aefc8
+      slot: accordion_content
+      uuid: 7af2f0e4-add7-4119-acd2-3d9f2cf33722
+      component_id: sdc.tac.text
+      inputs:
+        text:
+          value: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>'
+          format: canvas_html_block
+        text_size: normal
+        text_color: default
+    -
+      parent_uuid: 18dd216e-73ff-41e3-afc3-3bc9fce09d28
+      slot: accordion_content
+      uuid: 61eea13a-ee9b-4a02-9400-fb22b3e9a8a1
+      component_id: sdc.tac.accordion
+      inputs:
+        title: 'Accordion title'
+        heading_level: 3
+        icon: globe
+        open_by_default: true
+    -
+      parent_uuid: 61eea13a-ee9b-4a02-9400-fb22b3e9a8a1
+      slot: accordion_content
+      uuid: f7a0eca5-4a50-42ce-bb64-79b3c64ee9fc
+      component_id: sdc.tac.text
+      inputs:
+        text:
+          value: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>'
+          format: canvas_html_block
+        text_size: normal
+        text_color: default
+    -
+      parent_uuid: 18dd216e-73ff-41e3-afc3-3bc9fce09d28
+      slot: accordion_content
+      uuid: 96c8047f-fd24-4758-be34-db94d3b2fd52
+      component_id: sdc.tac.accordion
+      inputs:
+        title: 'Accordion title'
+        heading_level: 3
+        icon: globe
+        open_by_default: true
+    -
+      parent_uuid: 96c8047f-fd24-4758-be34-db94d3b2fd52
+      slot: accordion_content
+      uuid: eaa56c2d-1ae4-43e2-8290-3a51cf68be49
+      component_id: sdc.tac.text
+      inputs:
+        text:
+          value: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>'
+          format: canvas_html_block
+        text_size: normal
+        text_color: default
+    -
+      parent_uuid: 18dd216e-73ff-41e3-afc3-3bc9fce09d28
+      slot: accordion_content
+      uuid: f5d6f76c-a149-458d-ad5a-182066e1ae94
+      component_id: sdc.tac.accordion
+      inputs:
+        title: 'Accordion title'
+        heading_level: 3
+        icon: globe
+        open_by_default: true
+    -
+      parent_uuid: f5d6f76c-a149-458d-ad5a-182066e1ae94
+      slot: accordion_content
+      uuid: 9ad2d121-6b36-4b45-999c-eda4b89c389f
+      component_id: sdc.tac.text
+      inputs:
+        text:
+          value: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>'
+          format: canvas_html_block
+        text_size: normal
+        text_color: default
+    -
+      uuid: 10d3f400-8f1b-41e7-9f96-72f8379b4016
+      component_id: sdc.tac.section
+      inputs:
+        width: 100%
+        columns: '3'
+        mobile_columns: '1'
+        flex_gap: md
+        section_header: true
+        section_footer: true
+        padding_block_start: md
+        padding_block_end: md
+    -
+      parent_uuid: 10d3f400-8f1b-41e7-9f96-72f8379b4016
+      slot: main_slot
+      uuid: 1d0483f9-8cff-4cf7-b487-65b41929995b
+      component_id: sdc.tac.canvas-image
+      inputs:
+        image:
+          sourceType: default-relative-url
+          value:
+            src: assets/cliff-waterfall.jpg
+            alt: Placeholder
+            width: 2000
+            height: 1500
+          jsonSchema:
+            type: object
+            properties:
+              src:
+                type: string
+                contentMediaType: 'image/*'
+                format: uri-reference
+                x-allowed-schemes:
+                  - http
+                  - https
+              alt:
+                type: string
+              width:
+                type: integer
+              height:
+                type: integer
+            required:
+              - src
+          componentId: sdc.tac.canvas-image
+        width: 800
+        loading: lazy
+        border_radius: sm
+    -
+      parent_uuid: 10d3f400-8f1b-41e7-9f96-72f8379b4016
+      slot: main_slot
+      uuid: 161eeb08-72fd-4de2-8b97-4dd46bfca28e
+      component_id: sdc.tac.canvas-image
+      inputs:
+        image:
+          sourceType: default-relative-url
+          value:
+            src: assets/cliff-waterfall.jpg
+            alt: Placeholder
+            width: 2000
+            height: 1500
+          jsonSchema:
+            type: object
+            properties:
+              src:
+                type: string
+                contentMediaType: 'image/*'
+                format: uri-reference
+                x-allowed-schemes:
+                  - http
+                  - https
+              alt:
+                type: string
+              width:
+                type: integer
+              height:
+                type: integer
+            required:
+              - src
+          componentId: sdc.tac.canvas-image
+        width: 800
+        loading: lazy
+        border_radius: md
+    -
+      parent_uuid: 10d3f400-8f1b-41e7-9f96-72f8379b4016
+      slot: main_slot
+      uuid: b151f6f4-e9f8-4b54-b16e-360d2e3095a5
+      component_id: sdc.tac.canvas-image
+      inputs:
+        image:
+          sourceType: default-relative-url
+          value:
+            src: assets/cliff-waterfall.jpg
+            alt: Placeholder
+            width: 2000
+            height: 1500
+          jsonSchema:
+            type: object
+            properties:
+              src:
+                type: string
+                contentMediaType: 'image/*'
+                format: uri-reference
+                x-allowed-schemes:
+                  - http
+                  - https
+              alt:
+                type: string
+              width:
+                type: integer
+              height:
+                type: integer
+            required:
+              - src
+          componentId: sdc.tac.canvas-image
+        width: 800
+        loading: lazy
+        border_radius: lg
+  path:
+    -
+      alias: /home
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true
