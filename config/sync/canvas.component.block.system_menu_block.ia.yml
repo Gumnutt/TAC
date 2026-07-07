@@ -1,0 +1,27 @@
+uuid: 46f6ec1d-a4a8-4f4c-bf79-36b287da0033
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.ia
+  module:
+    - system
+active_version: 443557cf7601d05b
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:ia'
+        label: IA
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: IA
+id: block.system_menu_block.ia
+provider: system
+source: block
+source_local_id: 'system_menu_block:ia'

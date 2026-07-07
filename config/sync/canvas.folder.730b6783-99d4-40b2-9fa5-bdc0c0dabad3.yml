@@ -1,0 +1,21 @@
+uuid: 730b6783-99d4-40b2-9fa5-bdc0c0dabad3
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tac.accordion-container
+    - canvas.component.sdc.tac.carousel
+    - canvas.component.sdc.tac.grid
+    - canvas.component.sdc.tac.group
+    - canvas.component.sdc.tac.navbar
+    - canvas.component.sdc.tac.section
+name: Layout
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.tac.accordion-container
+  - sdc.tac.carousel
+  - sdc.tac.grid
+  - sdc.tac.group
+  - sdc.tac.navbar
+  - sdc.tac.section

@@ -1,0 +1,45 @@
+uuid: 5b0825fb-1e2a-4bea-bed5-c0fb60e2b0b9
+langcode: en
+status: false
+dependencies:
+  theme:
+    - tac
+active_version: 399271c79466a1f8
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        menu_id:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        instance_id:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        menu_name:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions:
+        items:
+          title: 'Menu Items'
+          description: 'List of menu items with title, url, and optionally below or content'
+label: Breadcrumb
+id: sdc.tac.breadcrumb
+provider: tac
+source: sdc
+source_local_id: 'tac:breadcrumb'

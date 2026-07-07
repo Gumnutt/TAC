@@ -1,0 +1,21 @@
+uuid: 96c14045-99e2-4838-9a77-a4d842470f0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tac.breadcrumb
+    - canvas.component.sdc.tac.button
+    - canvas.component.sdc.tac.heading
+    - canvas.component.sdc.tac.icon
+    - canvas.component.sdc.tac.text
+    - canvas.component.sdc.tac.video
+name: Base
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.tac.breadcrumb
+  - sdc.tac.button
+  - sdc.tac.heading
+  - sdc.tac.icon
+  - sdc.tac.text
+  - sdc.tac.video

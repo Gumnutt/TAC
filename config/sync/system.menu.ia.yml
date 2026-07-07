@@ -1,0 +1,13 @@
+uuid: 74346401-f591-4182-b1fc-45759b734212
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - tac_breadcrumbs
+_core:
+  default_config_hash: 2jsRq4d4WBZUrbobTT08lnHFWlobhBTMg9fdOvYzqcA
+id: ia
+label: IA
+description: 'Information architecture menu used to build the TAC breadcrumb trail.'
+locked: false

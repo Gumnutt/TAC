@@ -1,0 +1,17 @@
+uuid: 89024069-f8ea-4f7b-a954-2ed1edf380ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tac.navbar
+  module:
+    - options
+id: header
+label: Header
+component_tree:
+  '0:2fbbe1b9-c36c-4cf9-b20e-75df4fc2b74e':
+    uuid: 2fbbe1b9-c36c-4cf9-b20e-75df4fc2b74e
+    component_id: sdc.tac.navbar
+    component_version: 3149f199d66bbc29
+    inputs:
+      menu_align: center

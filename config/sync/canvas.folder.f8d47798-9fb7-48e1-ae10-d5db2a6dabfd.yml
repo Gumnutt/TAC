@@ -1,0 +1,11 @@
+uuid: f8d47798-9fb7-48e1-ae10-d5db2a6dabfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tac.hero
+name: Hero
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.tac.hero

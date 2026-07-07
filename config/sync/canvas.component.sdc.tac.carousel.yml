@@ -1,0 +1,57 @@
+uuid: 809ac975-44e0-4ee3-acb1-c61e30daeb1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - tac
+active_version: b18c544e2e01e991
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        space_between:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        pagination:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
+        autoplay:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
+        items_per_view:
+          required: false
+          field_type: list_integer
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_integer␟value
+    fallback_metadata:
+      slot_definitions:
+        items:
+          title: 'Carousel content'
+          description: 'Content in this slot will become an item in the carousel.'
+label: Accordion
+id: sdc.tac.carousel
+provider: tac
+source: sdc
+source_local_id: 'tac:carousel'

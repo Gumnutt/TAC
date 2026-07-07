@@ -1,0 +1,10 @@
+uuid: 3f5c7dcc-ceb0-4ddd-af9b-58ba94712403
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tac
+id: tac.footer
+region: footer
+theme: tac
+component_tree: {  }

@@ -1,0 +1,49 @@
+uuid: 8d07ffbd-64c7-4787-b88c-9b551faa596c
+langcode: en
+status: false
+dependencies:
+  module:
+    - options
+  theme:
+    - tac
+active_version: cd76cae4b20a44ec
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        variant:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: standard
+          expression: ℹ︎list_string␟value
+        label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        icon:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: globe
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: Chip
+id: sdc.tac.chip
+provider: tac
+source: sdc
+source_local_id: 'tac:chip'

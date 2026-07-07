@@ -1,0 +1,22 @@
+uuid: 9a3588b5-3301-4a6d-8c01-15c2a273a724
+langcode: en
+status: true
+dependencies:
+  module:
+    - tac_breadcrumbs
+active_version: a3e9619a37af5d58
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: tac_breadcrumb_block
+        label: 'TAC Breadcrumbs'
+        label_display: '0'
+        provider: tac_breadcrumbs
+    fallback_metadata:
+      slot_definitions: null
+label: 'TAC Breadcrumbs'
+id: block.tac_breadcrumb_block
+provider: tac_breadcrumbs
+source: block
+source_local_id: tac_breadcrumb_block

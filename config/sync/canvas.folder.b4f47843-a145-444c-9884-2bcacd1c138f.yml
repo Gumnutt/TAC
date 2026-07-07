@@ -1,0 +1,11 @@
+uuid: b4f47843-a145-444c-9884-2bcacd1c138f
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tac.chip
+name: 'UI Element'
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.tac.chip

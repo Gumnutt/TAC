@@ -1,0 +1,11 @@
+uuid: 95a3c420-2ef5-4239-bc58-964df5e54bc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.tac_breadcrumb_block
+name: TAC
+configEntityTypeId: component
+weight: 0
+items:
+  - block.tac_breadcrumb_block

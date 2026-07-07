@@ -1,0 +1,20 @@
+uuid: 498aed08-e84d-4509-81c0-3072ae4ff320
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tac
+id: tac_mainpagecontent
+theme: tac
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

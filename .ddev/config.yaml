@@ -5,3 +5,6 @@ hooks:
   post-start:
     - composer: install
     - composer: drupal:recipe-unpack
+web_environment:
+  - DRUSH_OPTIONS_URI=https://drupal-tac.ddev.site
+disable_settings_management: true
