@@ -6,9 +6,4 @@ tac-carousel {
   --carousel-pager-color: var(--theme-border-color);
   --carousel-pager-color-active: var(--theme-text-color-primary);
   --carousel-pager-size: 8px;
-
-  swiper-container {
-    display: grid;
-    width: 100%;
-  }
 }

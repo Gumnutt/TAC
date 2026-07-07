@@ -1,0 +1,38 @@
+{% set gap_map = {
+  'small': 8,
+  'medium': 16,
+  'large': 24
+} %}
+
+{% set gap = gap_map[space_between] ?? 0 %}
+
+{# Mobile-first: show 1 slide by default, then scale up at the theme's
+   breakpoints (768px tablet, 960px desktop) toward the configured view. #}
+{% set breakpoints = {
+  '768': { 'slidesPerView': min(items_per_view, 2), 'spaceBetween': gap },
+  '960': { 'slidesPerView': items_per_view, 'spaceBetween': gap },
+} %}
+
+{% set attrs = {
+  'slides-per-view': 1,
+  'loop': items|length > 1 ? 'true' : null,
+  'space-between': gap,
+  'pagination': pagination ? 'true' : null,
+  'autoplay': autoplay ? 'true' : null,
+  'breakpoints': breakpoints|json_encode,
+} %}
+
+{% for key, value in attrs %}
+	{% do attributes.setAttribute(key, value) %}
+{% endfor %}
+<tac-carousel>
+	<swiper-container {{ attributes }}>
+		{% for item in items %}
+			{% embed "tac:carousel-slide" %}
+				{% block content %}
+					{{item}}
+				{% endblock %}
+			{% endembed %}
+		{% endfor %}
+	</swiper-container>
+</tac-carousel>
