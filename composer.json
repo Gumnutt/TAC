@@ -89,6 +89,7 @@
         "drupal/site_template_helper": "^1.0.3",
         "drupal/svg_image": "^3.2.2",
         "drupal/symfony_mailer_lite": "^2.0.4",
+        "drupal/tac_recipes": "^1.0",
         "drupal/tagify": "^1.2.50",
         "drupal/token": "^1.17.0",
         "drupal/token_or": "^2.3.2",
@@ -106,7 +107,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
